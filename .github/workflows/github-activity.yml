@@ -1,13 +1,10 @@
 name: Update Profile GitHub Activity
-
 on:
   schedule:
     - cron: '0 * * * *'
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   update-activity:
     name: Fetch Recent Code Activity
@@ -15,15 +12,12 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
       - name: Inject GitHub Activity Into README
         uses: jamesgeorge007/github-activity-readme@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
         with:
-          # This line fixes the parsing bug by forcing uppercase filename targeting
-          README_FILE: "README.md"
-          COMMIT_MSG: "Specify auto-update profile telemetry timeline"
+          TARGET_FILE: "README.md"
+          COMMIT_MSG: "Update profile activity timeline"
           MAX_LINES: 5
           FILTER_EVENTS: "PushEvent,PullRequestEvent,IssuesEvent,ReleaseEvent"
