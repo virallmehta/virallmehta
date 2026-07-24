@@ -1,0 +1,27 @@
+name: Update Profile GitHub Activity
+
+on:
+  schedule:
+    # Automatically triggers every hour to fetch your latest work logs
+    - cron: '0 * * * *'
+  workflow_dispatch: # Allows you to manually click a button to test it instantly
+
+permissions:
+  contents: write # Grants the workflow runner write rights to update your README
+
+jobs:
+  update-activity:
+    name: Fetch Recent Code Activity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Inject GitHub Activity Into README
+        uses: jamesgeorge007/github-activity-readme@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # Limits the live timeline logs to your 5 most recent actions
+          COMMIT_MSG: "Specify auto-update profile telemetry timeline"
+          MAX_LINES: 5
