@@ -1,0 +1,28 @@
+name: Update Profile Live Feed
+
+on:
+  schedule:
+    # Runs automatically every 6 hours (At minute 0 past every 6th hour)
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allows you to manually trigger the update instantly
+
+permissions:
+  contents: write # Grants the bot permissions to commit updates to your README
+
+jobs:
+  update-readme-with-blog:
+    name: Fetch Latest RSS Feed Posts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Fetch RSS Feed and Update README
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          # Replace this with your actual site's RSS feed (e.g., WordPress feed URL)
+          feed_list: "https://swastikaa.com"
+          max_post_count: 5
+          # Custom professional layout style for your links
+          template: "- `$date` | [$title]($url)"
+          date_format: "yyyy-mm-dd"
