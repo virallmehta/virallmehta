@@ -26,3 +26,4 @@ jobs:
           README_FILE: "README.md"
           COMMIT_MSG: "Specify auto-update profile telemetry timeline"
           MAX_LINES: 5
+          FILTER_EVENTS: "PushEvent,PullRequestEvent,IssuesEvent,ReleaseEvent"
