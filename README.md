@@ -21,9 +21,9 @@ I build practical business solutions using WordPress, React, Express, and automa
 ### 📊 GitHub Ecosystem Activity
 ---
 
-### 📰 Latest Articles & Insights
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
+### 🕒 Recent Activity
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
 
 
 
