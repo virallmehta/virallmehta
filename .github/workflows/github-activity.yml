@@ -2,18 +2,19 @@ name: Update Profile GitHub Activity
 
 on:
   schedule:
-    # Automatically triggers every hour to fetch your latest work logs
+    # Triggers at the start of every hour automatically
     - cron: '0 * * * *'
-  workflow_dispatch: # Allows you to manually click a button to test it instantly
+  workflow_dispatch: # Keeps manual button execution enabled for immediate testing
 
 permissions:
-  contents: write # Grants the workflow runner write rights to update your README
+  contents: write
 
 jobs:
   update-activity:
     name: Fetch Recent Code Activity
     runs-on: ubuntu-latest
     steps:
+      # Upgraded checkout version to native Node 24 support to remove runner errors
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -22,6 +23,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          # Limits the live timeline logs to your 5 most recent actions
           COMMIT_MSG: "Specify auto-update profile telemetry timeline"
           MAX_LINES: 5
