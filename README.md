@@ -19,11 +19,10 @@ I build practical business solutions using WordPress, React, Express, and automa
 ---
 
 ### 📊 GitHub Ecosystem Activity
+<!--RECENT_ACTIVITY:start-->
 
-<p align="center">
-  <img src="https://vercel.app" alt="Viral's GitHub Stats" height="180" />
-  <img src="https://vercel.app" alt="Viral's Top Languages" height="180" />
-</p>
+<!--RECENT_ACTIVITY:last_update-->
+
 
 ---
 
@@ -39,8 +38,8 @@ I build practical business solutions using WordPress, React, Express, and automa
 
 ### ⭐ Featured Projects
 
-#### [Swastikaa React Starter Kit](https://github.com)
-A production-ready architecture designed for rapid development with pre-configured routing, state management, and optimized build steps.
+#### [Swastikaa React Starter Kit](https://github.com/virallmehta/swastikaa-react-starterkit)
+Production-ready React + Vite starter kit for SaaS applications, marketing websites, and headless WordPress/Wagtail frontends. Built with scalability, SEO, authentication, and maintainability in mind.
 
 #### [Swastikaa Express Backend](https://github.com)
 A robust, secure, and highly scalable REST API boilerplate featuring streamlined middleware setups, structured routing, and database integrations.
@@ -48,8 +47,8 @@ A robust, secure, and highly scalable REST API boilerplate featuring streamlined
 #### [LeadFlow – Automated Lead Management](https://github.com)
 An intelligent automation ecosystem bridging communication tools and CRMs to automate business workflows without overhead friction.
 
-#### [Swastikaa FieldKit](https://github.com)
-A specialized set of digital tools built to assist on-ground business operations, data collection, and remote team management.
+#### [Swastikaa FieldKit](https://github.com/virallmehta/swastikaa-fieldkit)
+A lightweight, developer-friendly custom fields plugin for WordPress. A lightweight, developer-friendly custom fields plugin for WordPress
 
 ---
 
