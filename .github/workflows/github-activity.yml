@@ -2,12 +2,12 @@ name: Update Profile GitHub Activity
 
 on:
   schedule:
-    # Triggers at the start of every hour automatically
+    # Automatically triggers at the start of every hour
     - cron: '0 * * * *'
-  workflow_dispatch: # Keeps manual button testing enabled
+  workflow_dispatch: # Keeps the manual play button active
 
 permissions:
-  contents: write # Crucial: grants permissions to write the updates to your README
+  contents: write # Mandatory to commit logs back into your profile file
 
 jobs:
   update-activity:
@@ -22,5 +22,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          # Crucial argument: Forces the parser directly to your file
+          FILENAME: "README.md"
           COMMIT_MSG: "Specify auto-update profile telemetry timeline"
           MAX_LINES: 5
